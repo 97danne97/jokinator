@@ -1,7 +1,7 @@
 # jokinator
 This application will fetch jokes from the JokeAPI.
 
-## Project setup
+## För att hämta alla moduler som krävs
 ```
 npm install
 ```
