@@ -6,23 +6,20 @@ This application will fetch jokes from the JokeAPI.
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Kompilerar och visar ändringar live på sidan när man utvecklar
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Kompilerar till färdig produkt
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Visar fel och fixar till fel
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
