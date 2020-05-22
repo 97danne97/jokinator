@@ -1,20 +1,20 @@
 <template>
-  <md-content>
-    <md-card class="joke" v-if="jokeData">
-      <md-card-header-text>
-        <div class="md-title">{{ jokeData.setup }}</div>
-        <div class="md-subhead">{{ jokeData.delivery }}</div>
-      </md-card-header-text>
-      <md-card-actions>
-        <md-button class="md-icon-button" v-on:click="removeJoke" v-if="saved">
-          <md-icon>favorite</md-icon>
-        </md-button>
-        <md-button class="md-icon-button" v-on:click="saveJoke" v-else>
-          <md-icon>favorite_border</md-icon>
-        </md-button>
-      </md-card-actions>
-    </md-card>
-  </md-content>
+  <md-card class="joke" v-if="jokeData">
+    <md-card-header-text>
+      <div class="md-title">{{ jokeData.setup }}</div>
+      <div class="md-subhead">{{ jokeData.delivery }}</div>
+    </md-card-header-text>
+    <md-card-actions>
+      <!-- If joke is saved, show filled heart, remove joke on click -->
+      <md-button class="md-icon-button" v-on:click="removeJoke" v-if="saved">
+        <md-icon>favorite</md-icon>
+      </md-button>
+      <!-- If joke isn´t saved, show bordered heart, save joke on click -->
+      <md-button class="md-icon-button" v-on:click="saveJoke" v-else>
+        <md-icon>favorite_border</md-icon>
+      </md-button>
+    </md-card-actions>
+  </md-card>
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
     };
   },
   props: {
-    jokeId: String
+    jokeId: [String, Number]
   },
   methods: {
     saveJoke() {
