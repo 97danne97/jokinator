@@ -1,8 +1,20 @@
 <template>
-  <section class="joke" v-if="jokeData">
-    <p class="setup">{{ jokeData.setup }}</p>
-    <p class="delivery">{{ jokeData.delivery }}</p>
-  </section>
+  <md-content>
+    <md-card class="joke" v-if="jokeData">
+      <md-card-header-text>
+        <div class="md-title">{{ jokeData.setup }}</div>
+        <div class="md-subhead">{{ jokeData.delivery }}</div>
+      </md-card-header-text>
+      <md-card-actions>
+        <md-button class="md-icon-button" v-on:click="removeJoke" v-if="saved">
+          <md-icon>favorite</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" v-on:click="saveJoke" v-else>
+          <md-icon>favorite_border</md-icon>
+        </md-button>
+      </md-card-actions>
+    </md-card>
+  </md-content>
 </template>
 
 <script>
@@ -14,35 +26,83 @@ export default {
     return {
       loading: false,
       error: null,
-      jokeData: null
+      jokeData: null,
+      saved: false
     };
   },
-  created() {
-    // Load Joke from API
-    this.loading = true;
-    axios({
-      method: "get",
-      url: `${process.env.VUE_APP_JOKE_API_URL}/Any?type=twopart`
-    })
-      .then(res => {
-        // Handle success
+  props: {
+    jokeId: String
+  },
+  methods: {
+    saveJoke() {
+      // Load jokes from localStorage
+      let jokes = JSON.parse(localStorage.getItem("jokes"));
+      // Add the joke to the array
+      jokes.push(this.jokeData.id);
+      // Save the array to localStorage
+      localStorage.setItem("jokes", JSON.stringify(jokes));
+      // Mark it as saved
+      this.saved = true;
 
-        // Check if the API sent an error
-        if(res.data.error){
-          this.error = res.data.message;
-          return;
-        }
-        // Store Joke data
-        this.jokeData = res.data;
-      })
-      .catch(err => {
-        // Handle error
-        this.error = err;
-        console.log(err);
-      }).then(() => {
-        // Always executed
-        this.loading = false;
-      });
+      console.log(`Saved joke with ID ${this.jokeData.id}`);
+    },
+    removeJoke() {
+      // Load jokes from localStorage
+      let jokes = JSON.parse(localStorage.getItem("jokes"));
+      // Remove the joke from the array
+      jokes.splice(jokes.indexOf(this.jokeData.id), 1);
+      // Save the array to localStorage
+      localStorage.setItem("jokes", JSON.stringify(jokes));
+      // Mark it as unsaved
+      this.saved = false;
+
+      console.log(`Removed joke with ID ${this.jokeData.id}`);
+    },
+    loadJoke(res) {
+      // Check if the API sent an error
+      if (res.data.error) {
+        this.error = res.data.message;
+        return;
+      }
+      // Store Joke data
+      this.jokeData = res.data;
+
+      // Load jokes from localStorage
+      let jokes = JSON.parse(localStorage.getItem("jokes"));
+
+      // Check if the Joke has been saved in localstorage
+      if (jokes.indexOf(this.jokeData.id) >= 0) {
+        // Mark the Joke as saved
+        this.saved = true;
+      }
+
+      // Set loading to false
+      this.loading = false;
+    },
+    getRandomJoke() {
+      // Get a random Joke
+      this.loading = true;
+      axios({
+        method: "get",
+        url: `${process.env.VUE_APP_JOKE_API_URL}/Any?type=twopart`
+      }).then(res => this.loadJoke(res));
+    },
+    getJokeById(id) {
+      // Get the Joke with the specified id
+      this.loading = true;
+      axios({
+        method: "get",
+        url: `${process.env.VUE_APP_JOKE_API_URL}/Any?type=twopart&idRange=${id}`
+      }).then(res => this.loadJoke(res));
+    }
+  },
+  created() {
+    // If a jokeId was specifiend, get the joke by Id, otherwise get a random joke
+    if (this.$props.jokeId) {
+      this.getJokeById(this.$props.jokeId);
+    } else {
+      this.getRandomJoke();
+    }
   }
 };
 </script>
