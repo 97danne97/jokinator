@@ -1,9 +1,9 @@
 <template>
   <md-card class="joke" v-if="jokeData">
-    <md-card-header-text>
+    <md-card-header>
       <div class="md-title">{{ jokeData.setup }}</div>
       <div class="md-subhead">{{ jokeData.delivery }}</div>
-    </md-card-header-text>
+    </md-card-header>
     <md-card-actions>
       <!-- If joke is saved, show filled heart, remove joke on click -->
       <md-button class="md-icon-button" v-on:click="removeJoke" v-if="saved">
@@ -26,7 +26,7 @@ export default {
     return {
       loading: false,
       error: null,
-      jokeData: null,
+      jokeData: {setup:'..', delivery:'..'},
       saved: false
     };
   },
