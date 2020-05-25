@@ -1,10 +1,34 @@
 <template>
-  <router-view />
+    <md-app md-waterfall md-mode="fixed-last">
+      <md-app-toolbar class="md-large md-dense md-primary">
+        <div class="md-toolbar-row">
+          <div class="md-toolbar-section-start">
+            <span class="md-title">Jokinator</span>
+          </div>
+        </div>
+
+        <div class="md-toolbar-row">
+          <md-tabs class="md-primary" md-sync-route>
+            <md-tab id="tab-start" md-label="Start" to="/" exact></md-tab>
+            <md-tab id="tab-jokes" md-label="Saved jokes" to="/jokes"></md-tab>
+          </md-tabs>
+        </div>
+      </md-app-toolbar>
+
+      <md-app-content>
+        <router-view/>
+      </md-app-content>
+    </md-app>
 </template>
 
 <script>
 export default {
   name: "App",
+  data(){
+    return{
+      menuVisible: false
+    }
+  },
   created() {
     // Create jokes in localStorage if it not exists
     if (!localStorage.getItem("jokes")) {
@@ -24,4 +48,14 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.md-app {
+    max-height: 100vh;
+    border: 1px solid rgba(#000, .12);
+  }
+  
+  .md-drawer {
+    width: 230px;
+    max-width: calc(100vw - 125px);
+  }
 </style>
