@@ -3,10 +3,14 @@
 </template>
 
 <script>
-
 export default {
   name: "App",
-  
+  created() {
+    // Create jokes in localStorage if it not exists
+    if (!localStorage.getItem("jokes")) {
+      localStorage.setItem("jokes", JSON.stringify([]));
+    }
+  }
 };
 </script>
 
