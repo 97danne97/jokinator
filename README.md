@@ -4,32 +4,36 @@ This application will fetch jokes from the JokeAPI.
 ## Why do we use Vue.js?
 * With the amount of time we had for this project Vue was also picked for its stated relatively easy learning curve. Because one of the group member had used Vue before, that easy learning curve was confirmed.
 
-# How to setup a Jokinator project
+## How to setup a Jokinator project
 
-## Clone the repository
+### Clone the repository
 ```
 git clone https://github.com/97danne97/jokinator/
 ```
 
-## För att hämta alla moduler som krävs
+### Install dependencies
 ```
 npm install
 ```
 
-### Kompilerar och visar ändringar live på sidan när man utvecklar
+### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Kompilerar till färdig produkt
+### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Visar fel och fixar till fel
+### Lints and fixes files
 ```
 npm run lint
 ```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
