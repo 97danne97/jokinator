@@ -1,6 +1,9 @@
 # jokinator
 This application will fetch jokes from the JokeAPI.
 
+## Why do we use Vue.js?
+* With the amount of time we had for this project Vue was also picked for its stated relatively easy learning curve. Because one of the group member had used Vue before, that easy learning curve was confirmed.
+
 ## För att hämta alla moduler som krävs
 ```
 npm install
