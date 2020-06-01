@@ -10,7 +10,7 @@
         <md-icon>favorite</md-icon>
       </md-button>
       <!-- If joke isn´t saved, show bordered heart, save joke on click -->
-      <md-button class="md-icon-button" v-on:click="saveJoke" v-else>
+      <md-button class="md-icon-button" v-on:click="saveJoke" v-else-if="jokeData.id">
         <md-icon>favorite_border</md-icon>
       </md-button>
     </md-card-actions>
