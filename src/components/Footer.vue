@@ -1,12 +1,9 @@
 <template>
-  <div>
-    <md-content id="footer">
-        <h2>Jokinator</h2>
+  <md-content id="footer">
+        <h3>Jokinator</h3>
         <p> Medlemmar: Anders Mantarro, Albin Medoc, Daniel Subasic </p>
         <p> Byggt med: Vue, Vue Materialize, JokeAPI, Axios</p>
     </md-content>
-
-  </div>
 </template>
 
 <script>
@@ -19,8 +16,9 @@ export default {
 
 <style>
     #footer{
-        background-color: blue;
+        background-color: #448aff;
         padding: 10px;
+
     }
 #p{
     text-align: center;

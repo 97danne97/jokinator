@@ -55,9 +55,14 @@ export default {
 }
 
 .md-app {
-    max-height: 100vh;
+    min-height: 100vh;
     border: 1px solid rgba(#000, .12);
+
+    
   }
+.md-app-content {
+  padding: 0 !important;
+}
   
   .md-drawer {
     width: 230px;
