@@ -8,7 +8,7 @@ We chose Vue over Angular because of the more complex nature of Angular which we
 
 ```
 <template>
-	<div id=”app”/>
+  <div id=”app”/>
 </template>
 
 <script>
