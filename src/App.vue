@@ -17,18 +17,18 @@
 
       <md-app-content>
         <router-view/>
-        <Footer></Footer>
       </md-app-content>
+      <md-app-toolbar id="footer">
+        <h2>Jokinator</h2>
+        <p>Medlemmar: Anders Mantarro, Albin Medoc, Daniel Subasic</p>
+        <p>Byggt med: Vue, Vue Materialize, JokeAPI, Axios</p>
+      </md-app-toolbar>
     </md-app>
 </template>
 
 <script>
-import Footer from "./components/Footer";
 export default {
   name: "App",
-  components:{
-    Footer
-  },
   data(){
     return{
       menuVisible: false
@@ -55,12 +55,17 @@ export default {
 }
 
 .md-app {
-    max-height: 100vh;
+    min-height: 100vh;
     border: 1px solid rgba(#000, .12);
   }
-  
-  .md-drawer {
-    width: 230px;
-    max-width: calc(100vw - 125px);
-  }
+
+.md-app-scroller{
+  margin-bottom: 180px;
+}
+
+#footer{
+  position: absolute;
+  top: auto !important;
+  bottom: 0;
+}
 </style>
