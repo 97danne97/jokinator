@@ -13,11 +13,16 @@ export default {
     Joke
   },
   data() {
-    // Load jokes from localStorage
-    let jokes = JSON.parse(localStorage.getItem("jokes"));
-    return {
-      jokes: jokes
-    };
+    return{
+      
+    }
+  },
+  computed:{
+    jokes(){
+      // Load jokes from localStorage
+      let jokes = JSON.parse(localStorage.getItem("jokes"));
+      return jokes
+    }
   }
 };
 </script>
