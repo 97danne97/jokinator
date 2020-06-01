@@ -17,13 +17,18 @@
 
       <md-app-content>
         <router-view/>
+        <Footer></Footer>
       </md-app-content>
     </md-app>
 </template>
 
 <script>
+import Footer from "./components/Footer";
 export default {
   name: "App",
+  components:{
+    Footer
+  },
   data(){
     return{
       menuVisible: false
