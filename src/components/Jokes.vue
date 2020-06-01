@@ -12,11 +12,6 @@ export default {
   components: {
     Joke
   },
-  data() {
-    return{
-      
-    }
-  },
   computed:{
     jokes(){
       // Load jokes from localStorage
