@@ -75,7 +75,13 @@ export default {
 .md-app-content {
   padding: 16px 0px !important;
 }
-  
+
+.jokes_container{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: auto;
+}
   .md-drawer {
     width: 230px;
     max-width: calc(100vw - 125px);

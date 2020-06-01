@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="jokes_container">
         <Joke v-if="newJoke"/>
-        <md-button v-on:click="getNewJoke" class="md-raised">Another Joke!</md-button>
+        <md-button id="joke_button" v-on:click="getNewJoke" class="md-raised">Another Joke!</md-button>
     </div>
 </template>
 

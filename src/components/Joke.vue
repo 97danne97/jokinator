@@ -107,5 +107,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.joke{
+  width: 100%;
+  margin: 10px 0;
+}
 </style>
