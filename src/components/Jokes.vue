@@ -1,6 +1,6 @@
 <template>
   <div class="jokes_container">
-      <Joke v-for="jokeid in jokes" :key="jokeid" v-bind:jokeId="jokeid"/>
+      <Joke :style="'animation-delay: ' + (0.05 * i).toString() + 's' " class="list-item" v-for="(jokeid, i) in jokes" :key="jokeid" v-bind:jokeId="jokeid"/>
   </div>
 </template>
 

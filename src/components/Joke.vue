@@ -111,5 +111,15 @@ export default {
 .joke{
   width: 100%;
   margin: 10px 0;
+  opacity: 0;
+  max-height: 0;
+  animation: fade-in .4s forwards ease-in;
+}
+
+@keyframes fade-in {
+  100%{
+    opacity: 1;
+    max-height: 500px;
+  }
 }
 </style>
