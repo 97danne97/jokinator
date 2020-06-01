@@ -84,7 +84,7 @@ export default {
       this.loading = true;
       axios({
         method: "get",
-        url: "https://sv443.net/jokeapi/v2/joke/Any?type=twopart&blacklistFlags=nsfw,religious,racist,sexist"
+        url: "https://sv443.net/jokeapi/v2/joke/Programming?type=twopart&blacklistFlags=nsfw,religious,racist,sexist"
       }).then(res => this.loadJoke(res));
     },
     getJokeById(id) {
@@ -92,7 +92,7 @@ export default {
       this.loading = true;
       axios({
         method: "get",
-        url: "https://sv443.net/jokeapi/v2/joke/Any?type=twopart&blacklistFlags=nsfw,religious,racist,sexist&idRange="+id
+        url: "https://sv443.net/jokeapi/v2/joke/Programming?type=twopart&blacklistFlags=nsfw,religious,racist,sexist&idRange="+id
       }).then(res => this.loadJoke(res));
     }
   },
