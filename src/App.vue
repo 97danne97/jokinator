@@ -57,6 +57,8 @@ export default {
 .md-app {
     min-height: 100vh;
     border: 1px solid rgba(#000, .12);
+
+    
   }
 
 .md-app-scroller{
@@ -68,4 +70,12 @@ export default {
   top: auto !important;
   bottom: 0;
 }
+.md-app-content {
+  padding: 16px 0px !important;
+}
+  
+  .md-drawer {
+    width: 230px;
+    max-width: calc(100vw - 125px);
+  }
 </style>
