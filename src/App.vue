@@ -61,7 +61,7 @@ export default {
     
   }
 .md-app-content {
-  padding: 0 !important;
+  padding: 16px 0px !important;
 }
   
   .md-drawer {
