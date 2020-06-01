@@ -84,7 +84,7 @@ export default {
       this.loading = true;
       axios({
         method: "get",
-        url: `${process.env.VUE_APP_JOKE_API_URL}/Any?type=twopart`
+        url: "https://sv443.net/jokeapi/v2/joke/Any?type=twopart"
       }).then(res => this.loadJoke(res));
     },
     getJokeById(id) {
