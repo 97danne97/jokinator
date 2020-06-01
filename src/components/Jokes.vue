@@ -12,12 +12,12 @@ export default {
   components: {
     Joke
   },
-  data() {
-    // Load jokes from localStorage
-    let jokes = JSON.parse(localStorage.getItem("jokes"));
-    return {
-      jokes: jokes
-    };
+  computed:{
+    jokes(){
+      // Load jokes from localStorage
+      let jokes = JSON.parse(localStorage.getItem("jokes"));
+      return jokes
+    }
   }
 };
 </script>
