@@ -69,6 +69,8 @@ export default {
   position: absolute;
   top: auto !important;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 .md-app-content {
   padding: 16px 0px !important;
