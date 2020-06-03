@@ -1,6 +1,8 @@
 # jokinator
 This application will fetch jokes from the JokeAPI at https://sv443.net/jokeapi/v2/joke.
 
+Users can generate jokes, save them locally in LocalStorage and list them. The application uses the Google Material design language which the group implemented by the Vue plugin Vue Material: https://vuematerial.io.
+
 ## Why do we use Vue.js?
 Since this was a smaller project, we wanted a framework that was easy to learn. We choose Vue for its easy learning curve and because one of the group members had used Vue before, so that easy learning curve was confirmed. We also choose Vue for its clear documentation. Vue also only weighs around 20KB, making it fast and flexible.
 
