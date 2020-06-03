@@ -1,5 +1,9 @@
+![Vue and Axios logo](https://miro.medium.com/fit/c/1838/551/1*4M64q8gmQVJsIIjbTiGWxg.png)
+
+![JokeAPI logo](https://rapidapi-prod-apis.s3.amazonaws.com/2ea25ecd-d16d-47c8-bb10-7ed568be2588.png)
+
 # jokinator
-This application will fetch jokes from the JokeAPI at https://sv443.net/jokeapi/v2/joke.
+This Vue.js-based application will fetch jokes from the JokeAPI at https://sv443.net/jokeapi/v2/joke using the Axios library: https://github.com/axios/axios.
 
 Users can generate jokes, save them locally in LocalStorage and list them. The application uses the Google Material design language which the group implemented by the Vue plugin Vue Material: https://vuematerial.io.
 
