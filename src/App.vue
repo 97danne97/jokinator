@@ -21,6 +21,10 @@
       </md-app-content>
 
       <md-app-toolbar id="footer"> <!-- Sticky footer to bottom, with info about developers -->
+        <h2 class="md-title">Utvecklare</h2>
+        <p class="md-body-1">Anders Mantarro, Albin Medoc, Daniel Subasic</p>
+        <h2 class="md-title">Byggt med</h2>
+        <p class="md-body-1">Vue, Vue Materialize, JokeAPI, Axios</p>
       </md-app-toolbar>
     </md-app>
   </div>
