@@ -1,9 +1,11 @@
 <template>
   <md-card class="joke">
     <md-card-header>
-      <div class="md-title">{{ jokeData.setup }}</div>
-      <div class="md-subhead">{{ jokeData.delivery }}</div>
+      <div class="md-headline">{{ jokeData.setup }}</div>
     </md-card-header>
+    <md-card-content>
+      <div class="md-subheading">{{ jokeData.delivery }}</div>
+    </md-card-content>
     <md-card-actions>
       <!-- If joke is saved, show filled heart, remove joke on click -->
       <md-button class="md-icon-button" v-on:click="removeJoke" v-if="saved">
