@@ -59,6 +59,7 @@ export default {
   bottom: 0;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .md-app-content { /* !important for priority over vue-material */
