@@ -1,4 +1,5 @@
 <template>
+  <div class="page-container">
     <md-app> <!-- root vue-material component that wraps the entire web-app -->
       <md-app-toolbar class="md-large md-dense md-primary"> <!-- Large header -->
         <div class="md-toolbar-row">
@@ -22,6 +23,7 @@
       <md-app-toolbar id="footer"> <!-- Sticky footer to bottom, with info about developers -->
       </md-app-toolbar>
     </md-app>
+  </div>
 </template>
 
 <script>
