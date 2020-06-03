@@ -1,5 +1,5 @@
 <template>
-  <md-card class="joke" v-if="jokeData">
+  <md-card class="joke">
     <md-card-header>
       <div class="md-title">{{ jokeData.setup }}</div>
       <div class="md-subhead">{{ jokeData.delivery }}</div>
@@ -24,13 +24,14 @@ export default {
   name: "Joke",
   data() {
     return {
-      loading: false,
       error: null,
+      // Jokes are two-part, with a setup and a punchline (delivery)
       jokeData: {setup:'..', delivery:'..'},
       saved: false
     };
   },
   props: {
+    // jokeId is passed by parent components so a specific joke can be fetched
     jokeId: [String, Number]
   },
   methods: {
@@ -108,18 +109,18 @@ export default {
 </script>
 
 <style scoped>
-.joke{
+.joke {
   width: 100%;
   margin: 10px 0;
-  opacity: 0;
-  max-height: 0;
+  opacity: 0; /* Hide before fade-in */
+  max-height: 0; 
   animation: fade-in .4s forwards ease-in;
 }
 
-@keyframes fade-in {
+@keyframes fade-in { /* Animation that fades and grows */
   100%{
     opacity: 1;
-    max-height: 500px;
+    max-height: 300px;
   }
 }
 </style>
